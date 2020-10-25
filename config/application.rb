@@ -22,4 +22,8 @@ module ChatApp
       g.test_framework false
     end
   end
+<<<<<<< Updated upstream
 end
+=======
+end
+>>>>>>> Stashed changes
