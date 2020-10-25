@@ -35,7 +35,3 @@ node_modules
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
-<<<<<<< Updated upstream
->>>>>>> parent of 7d55d57... Revert "master"
-=======
->>>>>>> Stashed changes
