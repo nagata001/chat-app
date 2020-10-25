@@ -961,3 +961,109 @@ Migrating to DeviseCreateUsers (20201025101814)
   [1m[35m (0.3ms)[0m  [1m[34mSELECT RELEASE_LOCK('8617640504667222525')[0m
   [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
   [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/users/sign_up" for ::1 at 2020-10-25 19:33:13 +0900
+  
+NoMethodError (undefined method `devise' for User (call 'User.connection' to establish a connection):Class):
+  
+app/models/user.rb:4:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+config/routes.rb:2:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/users/sign_up" for ::1 at 2020-10-25 19:34:05 +0900
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_up"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/sign_up" for ::1 at 2020-10-25 19:44:39 +0900
+  [1m[35m (0.6ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_up"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/sign_up" for ::1 at 2020-10-25 20:03:47 +0900
+  [1m[35m (0.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (25.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+DEPRECATION WARNING: [Devise] `DeviseHelper#devise_error_messages!` is deprecated and will be
+removed in the next major version.
+
+Devise now uses a partial under "devise/shared/error_messages" to display
+error messages by default, and make them easier to customize. Update your
+views changing calls from:
+
+    <%= devise_error_messages! %>
+
+to:
+
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+To start customizing how errors are displayed, you can copy the partial
+from devise to your `app/views` folder. Alternatively, you can run
+`rails g devise:views` which will copy all of them again to your app.
+ (called from block in _app_views_devise_registrations_new_html_erb___2095373078361829458_70345203825920 at /Users/mac-pc/projects/chat-app/app/views/devise/registrations/new.html.erb:9)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 96.6ms | Allocations: 8176)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 4066ms (Views: 4009.6ms | ActiveRecord: 18.5ms | Allocations: 1546344)
+
+
