@@ -4374,3 +4374,46 @@ Completed 404 Not Found in 67ms (ActiveRecord: 13.9ms | Allocations: 17195)
 ActiveRecord::RecordNotFound (Couldn't find Room without an ID):
   
 app/controllers/messages_controller.rb:5:in `index'
+Started GET "/" for ::1 at 2020-11-03 19:30:38 +0900
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 404 Not Found in 39ms (ActiveRecord: 0.6ms | Allocations: 15266)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Room without an ID):
+  
+app/controllers/messages_controller.rb:5:in `index'
+Started GET "/" for ::1 at 2020-11-03 19:30:50 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 404 Not Found in 5ms (ActiveRecord: 0.7ms | Allocations: 2311)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Room without an ID):
+  
+app/controllers/messages_controller.rb:5:in `index'
+Started GET "/" for ::1 at 2020-11-03 19:30:52 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 404 Not Found in 5ms (ActiveRecord: 0.4ms | Allocations: 2295)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Room without an ID):
+  
+app/controllers/messages_controller.rb:5:in `index'
+Started GET "/" for ::1 at 2020-11-03 19:32:08 +0900
+Processing by RoomsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (1.1ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` INNER JOIN `room_users` ON `rooms`.`id` = `room_users`.`room_id` WHERE `room_users`.`user_id` = 1[0m
+  ↳ app/views/messages/_side_bar.html.erb:13
+  Rendered messages/_side_bar.html.erb (Duration: 96.4ms | Allocations: 11676)
+  Rendered rooms/index.html.erb within layouts/application (Duration: 97.4ms | Allocations: 12002)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1772ms (Views: 1647.0ms | ActiveRecord: 113.3ms | Allocations: 1547097)
+
+
