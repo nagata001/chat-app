@@ -3700,3 +3700,215 @@ Completed 404 Not Found in 5ms (ActiveRecord: 0.7ms | Allocations: 2287)
 ActiveRecord::RecordNotFound (Couldn't find Room without an ID):
   
 app/controllers/messages_controller.rb:5:in `index'
+  [1m[35m (0.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('8617640504667222525', 0)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateMessages (20201028141101)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT @@innodb_file_per_table = 1 AND @@innodb_file_format = 'Barracuda'[0m
+  [1m[35m (9.4ms)[0m  [1m[35mCREATE TABLE `messages` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `content` varchar(255), `room_id` bigint, `user_id` bigint, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL,  INDEX `index_messages_on_room_id`  (`room_id`),  INDEX `index_messages_on_user_id`  (`user_id`), CONSTRAINT `fk_rails_a8db0fb63a`
+FOREIGN KEY (`room_id`)
+  REFERENCES `rooms` (`id`)
+, CONSTRAINT `fk_rails_273a25a7a6`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20201028141101')[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('8617640504667222525')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started POST "/rooms" for ::1 at 2020-11-03 17:21:11 +0900
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by RoomsController#create as HTML
+  Parameters: {"authenticity_token"=>"Qo3FXkWGUHjMOwa4A01Ha/Oh5yGTy3wJ2vbIUJi4tauqK8a3bUVtZGwWSGKMQJ25tllXkpNe+HlkYUe/q+8VrA==", "room"=>{"name"=>"新規チャット", "user_ids"=>["", "1"]}, "commit"=>"Create Room"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 60ms (ActiveRecord: 12.3ms | Allocations: 17200)
+
+
+  
+NameError (uninitialized constant Room::RoomUser):
+  
+app/controllers/rooms_controller.rb:7:in `create'
+Started POST "/rooms" for ::1 at 2020-11-03 17:35:02 +0900
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  
+SyntaxError (/Users/mac-pc/projects/chat-app/app/controllers/rooms_controller.rb:25: syntax error, unexpected end, expecting end-of-input):
+  
+app/controllers/rooms_controller.rb:25: syntax error, unexpected end, expecting end-of-input
+app/controllers/rooms_controller.rb:25: syntax error, unexpected end, expecting end-of-input
+app/controllers/rooms_controller.rb:25: syntax error, unexpected end, expecting end-of-input
+Started POST "/rooms" for ::1 at 2020-11-03 17:35:16 +0900
+  
+Zeitwerk::NameError (expected file /Users/mac-pc/projects/chat-app/app/controllers/rooms_controller.rb to define constant RoomsController, but didn't):
+  
+zeitwerk (2.4.0) lib/zeitwerk/loader/callbacks.rb:17:in `on_file_autoloaded'
+zeitwerk (2.4.0) lib/zeitwerk/kernel.rb:28:in `block in require'
+zeitwerk (2.4.0) lib/zeitwerk/kernel.rb:27:in `tap'
+zeitwerk (2.4.0) lib/zeitwerk/kernel.rb:27:in `require'
+activesupport (6.0.3.4) lib/active_support/inflector/methods.rb:282:in `const_get'
+activesupport (6.0.3.4) lib/active_support/inflector/methods.rb:282:in `block in constantize'
+activesupport (6.0.3.4) lib/active_support/inflector/methods.rb:280:in `each'
+activesupport (6.0.3.4) lib/active_support/inflector/methods.rb:280:in `inject'
+activesupport (6.0.3.4) lib/active_support/inflector/methods.rb:280:in `constantize'
+activesupport (6.0.3.4) lib/active_support/dependencies/zeitwerk_integration.rb:19:in `constantize'
+actionpack (6.0.3.4) lib/action_dispatch/http/request.rb:89:in `controller_class_for'
+actionpack (6.0.3.4) lib/action_dispatch/http/parameters.rb:100:in `binary_params_for?'
+actionpack (6.0.3.4) lib/action_dispatch/http/parameters.rb:91:in `set_binary_encoding'
+actionpack (6.0.3.4) lib/action_dispatch/http/parameters.rb:69:in `path_parameters='
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:47:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.4) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/rooms" for ::1 at 2020-11-03 17:36:55 +0900
+Processing by RoomsController#create as HTML
+  Parameters: {"authenticity_token"=>"Qo3FXkWGUHjMOwa4A01Ha/Oh5yGTy3wJ2vbIUJi4tauqK8a3bUVtZGwWSGKMQJ25tllXkpNe+HlkYUe/q+8VrA==", "room"=>{"name"=>"新規チャット", "user_ids"=>["", "1"]}, "commit"=>"Create Room"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 10.5ms | Allocations: 14895)
+
+
+  
+NameError (uninitialized constant Room::RoomUser):
+  
+app/controllers/rooms_controller.rb:7:in `create'
+Started POST "/rooms" for ::1 at 2020-11-03 17:37:52 +0900
+Processing by RoomsController#create as HTML
+  Parameters: {"authenticity_token"=>"Qo3FXkWGUHjMOwa4A01Ha/Oh5yGTy3wJ2vbIUJi4tauqK8a3bUVtZGwWSGKMQJ25tllXkpNe+HlkYUe/q+8VrA==", "room"=>{"name"=>"新規チャット", "user_ids"=>["", "1"]}, "commit"=>"Create Room"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 1.1ms | Allocations: 3378)
+
+
+  
+NameError (uninitialized constant Room::RoomUser):
+  
+app/controllers/rooms_controller.rb:7:in `create'
+  [1m[35m (2.8ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT GET_LOCK('8617640504667222525', 0)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT RELEASE_LOCK('8617640504667222525')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'example@fuga.com' LIMIT 1[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('hoge', 'example@fuga.com', '$2a$12$pVxXJ8z8jQ8Fq8X2.g1khepHboZxJZSzt8xW7W2EjVMyhnOuM/7ve', '2020-11-03 09:04:06.376974', '2020-11-03 09:04:06.376974')[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` IN (1, 2)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRoom Create (0.5ms)[0m  [1m[32mINSERT INTO `rooms` (`name`, `created_at`, `updated_at`) VALUES ('ルーム１', '2020-11-03 09:04:18.974021', '2020-11-03 09:04:18.974021')[0m
+  [1m[36mRoomUser Create (0.5ms)[0m  [1m[32mINSERT INTO `room_users` (`room_id`, `user_id`, `created_at`, `updated_at`) VALUES (2, 1, '2020-11-03 09:04:18.978620', '2020-11-03 09:04:18.978620')[0m
+  [1m[36mRoomUser Create (0.4ms)[0m  [1m[32mINSERT INTO `room_users` (`room_id`, `user_id`, `created_at`, `updated_at`) VALUES (2, 2, '2020-11-03 09:04:18.981256', '2020-11-03 09:04:18.981256')[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/rooms" for ::1 at 2020-11-03 18:05:58 +0900
+  [1m[35m (0.8ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by RoomsController#create as HTML
+  Parameters: {"authenticity_token"=>"Qo3FXkWGUHjMOwa4A01Ha/Oh5yGTy3wJ2vbIUJi4tauqK8a3bUVtZGwWSGKMQJ25tllXkpNe+HlkYUe/q+8VrA==", "room"=>{"name"=>"新規チャット", "user_ids"=>["", "1"]}, "commit"=>"Create Room"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1[0m
+  ↳ app/controllers/rooms_controller.rb:7:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/rooms_controller.rb:8:in `create'
+  [1m[36mRoom Create (0.3ms)[0m  [1m[32mINSERT INTO `rooms` (`name`, `created_at`, `updated_at`) VALUES ('新規チャット', '2020-11-03 09:05:58.595004', '2020-11-03 09:05:58.595004')[0m
+  ↳ app/controllers/rooms_controller.rb:8:in `create'
+  [1m[36mRoomUser Create (0.5ms)[0m  [1m[32mINSERT INTO `room_users` (`room_id`, `user_id`, `created_at`, `updated_at`) VALUES (3, 1, '2020-11-03 09:05:58.600448', '2020-11-03 09:05:58.600448')[0m
+  ↳ app/controllers/rooms_controller.rb:8:in `create'
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/rooms_controller.rb:8:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 92ms (ActiveRecord: 16.1ms | Allocations: 28765)
+
+
+Started GET "/" for ::1 at 2020-11-03 18:05:58 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 404 Not Found in 25ms (ActiveRecord: 5.5ms | Allocations: 8080)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Room without an ID):
+  
+app/controllers/messages_controller.rb:5:in `index'
+Started GET "/" for ::1 at 2020-11-03 18:06:24 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 404 Not Found in 5ms (ActiveRecord: 0.5ms | Allocations: 2357)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Room without an ID):
+  
+app/controllers/messages_controller.rb:5:in `index'
+Started GET "/" for ::1 at 2020-11-03 18:09:55 +0900
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 404 Not Found in 66ms (ActiveRecord: 16.2ms | Allocations: 17131)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Room without an ID):
+  
+app/controllers/messages_controller.rb:5:in `index'
+Started GET "/rooms/new" for ::1 at 2020-11-03 18:11:08 +0900
+Processing by RoomsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering rooms/new.html.erb within layouts/application
+  Rendered rooms/new.html.erb within layouts/application (Duration: 15.6ms | Allocations: 3159)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1375ms (Views: 1368.0ms | ActiveRecord: 0.6ms | Allocations: 1533936)
+
+
